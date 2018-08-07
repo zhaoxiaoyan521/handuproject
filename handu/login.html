@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>用户中心-注册</title>
+	<link rel="stylesheet" type="text/css" href="css/login.css"/>
+</head>
+<body>
+	<div id="pageHead">
+		<iframe align="center" width="100%" height="198" src="sharehead.html"  frameborder="no" border="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+	</div>
+	<div class="centerBox">
+		<div class="leftBox">
+			<div class="leftTopBox">
+				<span>已是韩都衣舍用户：</span>
+				<input type="button" value="直接登录"/>
+			</div>
+			<img src="loginImg/erweima.png"/>
+			<div class="leftBottom">
+				<input type="text"/>
+				<a href="#"><img src="loginImg/footer00.png"/></a>
+			</div>
+		</div>
+		<div class="rightBox">
+			<div class="rightTopBox">
+				<p><span>1</span>请选择注册方式：</p>
+				<input class="loginStyle" type="button" value="使用手机注册"/>
+				<input class="loginStyle" type="button" value="使用邮箱注册"/>
+			</div>
+			<div class="rightCenterBox" style="display: block;">
+				<p><span>2</span>填写您的信息：</p>
+				<div class="textBox">
+					<div class="leftText">
+						您的手机号：
+					</div>
+					<input id="phoneNum" type="text"/>
+					<input type="button" id="checkMa" value="发送验证码"/><span id="spanPhone"></span>
+					<i>请输入您在注册时使用的手机号码，若当前号码不用/丢失，或无法收到验证码？<a href="#">其他验证方式</a></i>
+				</div>
+				<div class="textBox" style="margin-bottom: 10px;">
+					<div class="leftText">
+						验证码：
+					</div>
+					<input id="textMa" type="text"/><span id="checkmas"></span>
+				</div>
+				<div class="textBox">
+					<div class="leftText">
+						密码：
+					</div>
+					<input id="passWord" type="password"/><span id="passwordR"></span>
+					<i>6-16位字符，可使用数字、字母或符号的组合</i>
+				</div>
+				<div class="textBox">
+					<div class="leftText">
+						确认密码：
+					</div>
+					<input id="chexkAgain" type="password"/><span id="checkAgSpan"></span>
+				</div>
+				<em class="agreeM"><input type="checkbox" checked>我已看过并接受<a href="#">《用户协议》</a></em>
+				<input id="subBtn" type="submit" value="同意协议并注册"/>
+			</div>
+			<div class="rightCenterBox" style="display: none;">
+				<p><span>2</span>填写您的信息：</p>
+				<div class="textBox">
+					<div class="leftText">
+						Email：
+					</div>
+					<input id="cheakEmail" type="text"/>
+					<i>Email地址作为用户名，同时也用于接收账户信息、订单通知及密码找回等功能</i>
+				</div>
+				<div class="textBox">
+					<div class="leftText">
+						密码：
+					</div>
+					<input id="passWord" type="password"/><span id="passwordR"></span>
+					<i>6-16位字符，可使用数字、字母或符号的组合</i>
+				</div>
+				<div class="textBox">
+					<div class="leftText">
+						确认密码：
+					</div>
+					<input id="chexkAgain" type="password"/><span id="checkAgSpan"></span>
+					<i>请再次输入密码，两次输入必须一致</i>
+				</div>
+				<div class="textBox">
+					<div class="leftText">
+						验证码：
+					</div>
+					<input id="checkMaRandom" type="text"/><span id="checkMaRandomSpan"></span><span id="RandomSpan"></span>
+				</div>
+				<em class="agreeM" style="padding-left: 115px;"><input type="checkbox" checked>我已看过并接受<a href="#">《用户协议》</a></em>
+				<input id="subBtn" type="submit" value="同意协议并注册"/>
+			</div>
+		</div>
+	</div>
+	<div id="pageFoot">
+		<iframe align="center" width="100%" height="440" src="sharefoot.html"  frameborder="no" border="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+	</div>
+</body>
+</html>
+<script type="text/javascript" src="js/jquery-1.11.3.js"></script>
+<script type="text/javascript" src="js/toolsdom.js"></script>
+<script type="text/javascript" src="js/RegExp.js"></script>
+<script type="text/javascript">
+	let dblock=$n(".rightCenterBox");
+	let logdiv=$n(".loginStyle");
+	logdiv[0].onclick=function(){
+		this.style.backgroundPosition="0px -101px";
+		this.style.color="white";
+		logdiv[1].style.backgroundPosition="0px -150px";
+		logdiv[1].style.color="black";
+		dblock[0].style.display="block";
+		dblock[1].style.display="none";
+	}
+	logdiv[1].onclick=function(){
+		this.style.backgroundPosition="0px -101px";
+		this.style.color="white";
+		logdiv[0].style.backgroundPosition="0px -150px";
+		logdiv[0].style.color="black";
+		dblock[1].style.display="block";
+		dblock[0].style.display="none";
+	}
+
+	let spanStr=$n("#spanPhone");
+	$n("#phoneNum").onblur=function(){
+		if(checkout("phone",this.value)){
+			spanStr.innerHTML="<img src='loginImg/keyizhuce.gif'/>";
+		}else{
+			spanStr.innerHTML="手机号格式不正确";
+		}
+	}	
+	let m;
+	$n("#checkMa").onclick=function(){
+		m="";
+		for(let i=0;i<6;i++){
+			m+=parseInt(Math.random()*10);
+		}
+		console.log(m);
+		return m;
+
+	}
+	$n("#textMa").onblur=function(){
+		if(this.value===m){
+			$n("#checkmas").innerHTML="<img src='loginImg/keyizhuce.gif'/>";
+		}else{
+			$n("#checkmas").innerHTML="验证码不正确";
+		}
+	}
+	$n("#passWord").onblur=function(){
+		if(this.value.length<8){
+			$n("#passwordR").innerHTML="密码长度不能小于8位";
+		}else if(checkout("password",this.value)){
+			$n("#passwordR").innerHTML="<img src='loginImg/keyizhuce.gif'/>";
+		}else {
+			$n("#passwordR").innerHTML="密码必须为8-24位字母与数字组合";
+		}
+	}
+	$n("#chexkAgain").onblur=function(){
+		if(this.value.length<8){
+			$n("#passwordR").innerHTML="密码长度不能小于8位";
+		}else if(this.value===$n("#checkAgSpan").value){
+			$n("#checkAgSpan").innerHTML="<img src='loginImg/keyizhuce.gif'/>";
+		}else{
+			$n("#checkAgSpan").innerHTML="两次输入的密码不一致";
+		}
+	}
+	
+	$n("#cheakEmail").onblur=function(){
+		if(this.value.length<0){
+			$n("#passwordR").innerHTML="请填写E-mail";
+		}else if(checkout("Email",this.value)){
+			$n("#emailCheck").innerHTML="<img src='loginImg/keyizhuce.gif'/>";
+		}else {
+			$n("#emailCheck").innerHTML="E-mail格式不正确";
+		}
+	}
+	let n;
+	window.onload=function(){
+		n="";
+		for(let i=0;i<6;i++){
+			n+=parseInt(Math.random()*10);
+		}
+		$n("#checkMaRandomSpan").innerHTML=n;
+	}
+	$n("#checkMaRandomSpan").onclick=function(){
+		n="";
+		for(let i=0;i<6;i++){
+			n+=parseInt(Math.random()*10);
+		}
+		$n("#checkMaRandomSpan").innerHTML=n;
+	}
+	$n("#checkMaRandom").onblur=function(){
+		if(this.value===n){
+			$n("#RandomSpan").innerHTML="<img src='loginImg/keyizhuce.gif'/>";
+		}else{
+			$n("#RandomSpan").innerHTML="验证码不正确";
+		}
+	}
+	
+</script>

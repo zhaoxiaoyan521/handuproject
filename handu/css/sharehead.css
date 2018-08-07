@@ -1,0 +1,333 @@
+@charset "utf-8";
+/* CSS Document */
+body,p,ol,ul,li,dd,dt,dl,h1,h2,h3,h4,h5,h6,table,tr,td,tt,form,textarea,fieldset,legend,input{
+	margin:0;
+	padding:0;
+}
+html,body{
+	width: 100%;
+	height:100%;
+	font-family: "Arial","微软雅黑";
+}
+ul,li{
+	list-style: none;
+}
+a{
+	text-decoration: none;
+}
+/*nav*/
+.navBigBox{
+	width:100%;
+	height:29px;
+	border-bottom: 1px solid #dddddd;
+	background-color: #f5f5f5;
+}
+.navBox{
+	width:1200px;
+	font-size: 12px;
+	margin:0 auto;
+}
+.leftNav{
+	float: left;
+}
+.navBox p{
+	float: left;
+	line-height: 29px;
+}
+.navBox a{
+	color:#565656;
+}
+.navMain a{
+	font-weight: 900;
+	color:#ff0033;
+	margin:0px 21px 0px 7px;
+}
+.rightNav{
+	float: right;
+	width: 507px;
+}
+.navUl1{
+	line-height: 29px;
+}
+.navUl1 li{
+	float: left;
+	margin:0 7px;
+}
+.navUl1 :first-child a{
+	color: #000000;
+}
+.navUl1 :nth-child(3) a{
+	color: #c70a28;
+}
+.navUl1 li:last-child a{
+	padding-right:12px;
+	border-right:1px solid #dddddd;
+}
+.navUl2{
+	float: right;
+	line-height: 29px;
+}
+.navUl2 li{
+	float: left;
+	margin:0 7px;
+}
+.navUl2 li span{
+	background: url(../img/icon.png) no-repeat -32px -28px;
+	display: inline-block;
+	width: 12px;
+	height:10px;
+	padding-right:3px;
+}
+/*header*/
+
+.headBox{
+	width:1200px;
+	height:74px;
+	padding: 28px 0 34px 0;
+	margin:0 auto;
+}
+.hdLogo{
+	display: block;
+	width: 355px;
+	height:74px;
+	float: left;
+	background: url(../img/logo_new.png) no-repeat 0px -14px;
+}
+.hdRight{
+	float:left;
+	height:74px;
+	margin-left:47px;
+}
+.hdInputBox{
+	border:2px solid #c80a28;
+	width:492px;
+	height:32px;
+	position: relative;
+}
+.hdInput{
+	width: 403px;
+	height: 32px;
+	color:  #c80a28;
+	border:none;
+	outline: none;
+	font-size: 14px;
+	position: absolute;
+	top:0;
+	left:0;
+}
+.hdBtn{
+	width: 84px;
+	height:32px;
+	background-color: #c80a28;
+	font-size: 16px;
+	border:none;
+	color:white;
+	position: absolute;
+	top:0;
+	right:0;
+}
+.hdUl li{
+	float: left;
+	font-size: 12px;
+	line-height: 34px;
+}
+.hdUl li a{
+	color: #666666;
+	padding: 0 9px;
+	border-right:1px solid #666666;
+}
+.hdUl li:first-child a{
+	padding-left: 0;
+}
+.hdUl li:last-child a{
+	border:none;
+}
+/*manu*/
+.manuHeader{
+	width:1200px;
+	height:33px;
+	margin:0 auto;
+	margin-bottom: 5px;
+	position: relative;
+}
+.manuHeader a{
+	line-height: 33px;
+	color:black ;
+	font-weight: 900;
+	font-size:14px; 
+	margin:0 16px;
+}
+.manuHeader a:hover{
+	color: #fe0032;
+}
+.manuHeadList{
+	display: inline-block;
+	position: absolute;
+	top:0;
+	left: 0;
+	z-index: 10000;
+	width: 190px;
+	height: 487px;
+	background-color: #e3e3e3;
+}
+.manuHeader .manuList{
+	display: inline-block;
+	width: 190px;
+	background-color: #fe0032;
+	color: white;
+	margin-left:0;
+	text-align:center;
+}
+.manuHeader .manuList:hover{
+	color:white;
+}
+.manuHeaderRight{
+	float: right;
+}
+.manuHeaderRight .triangle{
+	display: inline-block;
+	width: 6px;
+	height:6px;
+	background:url(../img/sjt.png) no-repeat 0px 0px;
+	margin-left:4px;
+}
+/*轮播商品列表*/
+
+ 
+.manuHeadList .leftManuList .ManuListLi{
+	width: 160px;
+	height: 46px;
+	background: url(../img/leftjt.png) no-repeat 0px 0px;
+	background-position: 177px 18px;
+	padding:10px 16px 8px 14px;
+	border-bottom: 1px dashed #cccccc;
+	position: relative;
+}
+.manuHeadList .leftManuList .ManuListLi h3{
+	font-size: 14px;
+	color: #333333;
+	line-height: 25px;
+	vertical-align: middle;
+}
+.biaoPic{
+	display: inline-block;
+	width: 18px;
+	height: 18px;
+	float: left;
+	margin:2px 2px 0 1px;
+}
+.biaoPic img:first-child{
+	/*display: block;*/
+}
+.biaoPic img:last-child{
+	display: none;
+}
+
+.manuHeadList .leftManuList .ManuListLi a{
+	font-size: 12px;
+	color: #555555;
+	margin: 0px;
+	font-weight: 100;
+	padding-right:6px;
+	/*line-height: 25px;*/
+}
+.manuHeadList .ManuListLi:hover a{
+	color:white;
+}
+.leftManuList .rightManuList{
+	position: absolute;
+	left:190px;
+	width: 386px;
+	top:0px;
+	padding:0px 6px;
+	height:455px;
+}
+.listLeft{
+	width: 70px;
+	height: 450px;
+	float: left;
+	margin-top: 5px;
+	background-color: white;
+	opacity: 0.9;
+	padding-right: 10px;
+}
+ .rightManuList .ManuListLi .listLeft a{
+	float: left;
+	margin:9px 0;
+}
+.listRight{
+	padding-right:30px;
+}
+.manuHeadList .leftManuList .rightManuList{
+	background-color: white;
+	opacity: 0.9;
+}
+.manuHeadList .leftManuList .positionBoxs{
+	top:-60px;
+}
+.leftManuList .rightManuList ul li{
+	border-bottom: 1px dashed #cccccc;
+	padding-bottom: 10px; 
+}
+.leftManuList .rightManuList ul li h3{
+	font-size: 14px;
+	color: #333434;
+	line-height: 35px;
+}
+.manuHeadList .leftManuList .rightManuList ul li a{
+	font-size: 12px;
+	padding:0 8px 0 4px;
+	line-height: 12px;
+	border-right:1px solid #dcd7d3;
+	color: #858685;
+}
+.manuHeadList .leftManuList .rightManuList ul li a:last-child{
+	border-right: none;
+}
+.manuHeadList .leftManuList .rightManuList ul li a:first-of-type{
+	color:#f90302;
+}
+.manuHeadList .leftManuList .positionBox{
+	top:-125px;
+}
+.manuHeader .manuHeadList .leftManuList .positionBox span a{
+	display: inline-block;
+	margin:10px 10px 0 0;
+	line-height: 20px;
+	/*margin: 20px 20px 0 0px;*/
+}
+.manuHeadList .leftManuList .positionBox1{
+	top:-55px;
+	height:314px;
+}
+.manuHeader .manuHeadList .leftManuList .positionBox1 span a{
+	display: inline-block;
+	margin:10px 10px 0 0;
+	line-height: 20px;
+	/*margin: 20px 20px 0 0px;*/
+}
+.manuHeadList .leftManuList .positionBox3{
+	top:40px;
+	height:155px;
+}
+.manuHeader .manuHeadList .leftManuList .positionBox3 span a{
+	display: inline-block;
+	margin:10px 10px 0 0;
+	line-height: 20px;
+	/*margin: 20px 20px 0 0px;*/
+}
+.manuHeadList .leftManuList .liSeven{
+	border-bottom: none;
+}
+.manuHeader .manuHeadList .ManuListLi:hover .biaoPic .onePic{
+	display: none;
+}
+.manuHeader .manuHeadList .ManuListLi:hover .changePosition{
+	margin-left: 20px;
+}
+.manuHeader .manuHeadList .ManuListLi:hover .biaoPic .twoPic{
+	display: block;
+}
+.manuHeader .manuHeadList .ManuListLi a:hover{
+	text-decoration:underline;
+}
